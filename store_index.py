@@ -3,17 +3,19 @@ import os
 from src.helper import load_pdf_file, filter_to_minimal_docs, text_split, download_hugging_face_embeddings
 from pinecone import Pinecone
 from pinecone import ServerlessSpec 
-from langchain_pinecone import PineconeVectorStore
+from langchain_pinecone import PineconeVectorStore  
+from langchain_community.embeddings import HuggingFaceEmbeddings 
 
 load_dotenv()
 
 
-PINECONE_API_KEY=os.environ.get('PINECONE_API_KEY')
-OPENAI_API_KEY=os.environ.get('OPENAI_API_KEY')
-
-os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
-os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
-
+from dotenv import load_dotenv
+import os 
+load_dotenv()
+PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+os.environ["PINECONE_API_KEY"]= PINECONE_API_KEY
+os.environ["GROQ_API_KEY"] = GROQ_API_KEY
 
 extracted_data=load_pdf_file(data='data/')
 filter_data = filter_to_minimal_docs(extracted_data)

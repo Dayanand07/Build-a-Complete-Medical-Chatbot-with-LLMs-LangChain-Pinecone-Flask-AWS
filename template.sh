@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Creating directory 
 mkdir -p src
 mkdir -p research 
@@ -14,3 +15,24 @@ touch requirements.txt
 
 
 echo "Directory and files created successfully!."
+=======
+#creating dic 
+
+mkdir -p src
+mkdir -p research
+
+
+#creating files
+
+touch src/__init__.py
+touch src/helper.py
+touch src/prompt.py
+touch .env
+touch setup.py
+touch app.py
+touch research/trails.ipynb
+touch requirements.txt
+
+echo "Dir and files created successfully"
+
+>>>>>>> fe2e7cd472d937b4082fc90e798e18a767cbb8c9
